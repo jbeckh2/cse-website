@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CSE - Callegari & Son Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/CSE-logo.png" alt="CSE - Callegari & Son Enterprises Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header" style="background: linear-gradient(rgba(26, 42, 68, 0.8), rgba(26, 42, 68, 0.8)), url('images/home-hero.jpg'); background-size: cover; background-position: center; padding: 120px 0;">
+            <div class="container">
+                <h1>Contact Us</h1>
+            </div>
+        </section>
+
+        <section class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-intro">
+                        <h2>Let's Talk</h2>
+                        <p class="lead">If you have a project, operational challenge, or opportunity that needs a clear path forward, CSE can help. We work with businesses and public entities to solve problems and move ideas into action.</p>
+                    </div>
+                    
+                    <div class="contact-details-grid">
+                        <div class="contact-method-card">
+                            <div class="icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:jay@callegarisolutions.com">jay@callegarisolutions.com</a></p>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:3185550123">(318) 555-0123</a></p>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <h3>Address</h3>
+                            <p>208 N. Washington St.<br>Marksville, LA 71351</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=208+N+Washington+St+Marksville+LA+71351" target="_blank" class="directions-link">(get directions)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Callegari & Son Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            margin-bottom: 60px;
+        }
+
+        .contact-intro h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-intro .lead {
+            font-size: 1.2rem;
+            color: var(--gray-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-method-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .contact-method-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-method-card .icon {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .contact-method-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .contact-method-card p {
+            font-size: 1.1rem;
+            color: var(--gray-medium);
+            line-height: 1.5;
+        }
+
+        .contact-method-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-method-card a:hover {
+            text-decoration: underline;
+        }
+
+        .directions-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.85rem !important;
+            font-weight: 400 !important;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

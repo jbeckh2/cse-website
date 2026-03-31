@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CSE - Callegari & Son Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/CSE-logo.png" alt="CSE - Callegari & Son Enterprises Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header" style="background: linear-gradient(rgba(26, 42, 68, 0.8), rgba(26, 42, 68, 0.8)), url('images/about-hero.jpg'); background-size: cover; background-position: center; padding: 120px 0;">
+            <div class="container">
+                <h1>About CSE</h1>
+            </div>
+        </section>
+
+        <section class="about-content section-padding">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="text-block">
+                        <p class="lead">Founded in 2009, CSE has evolved from hands-on project work into a consulting firm focused on solving complex problems and supporting meaningful projects.</p>
+                        <p>With a background in specialized construction and Department of Defense contracting, CSE understands how projects are built and executed. That experience, combined with advanced academic training including a PhD, provides a unique ability to understand both operational challenges and broader systems.</p>
+                        <p>Today, CSE works with businesses, government entities, and organizations to identify opportunities, navigate challenges, and develop practical solutions that lead to results.</p>
+                    </div>
+                    <div class="image-block">
+                        <img src="images/about-collaboration.jpg" alt="CSE Collaboration and Strategy" class="about-side-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Why Choose CSE</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Founded in 2009 with real-world experience</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Background in construction and Department of Defense contracting</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Strong understanding of government and business environments</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Advanced academic training (PhD)</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Proven ability to solve complex problems</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Focus on practical, results-driven solutions</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <p>Ability to connect people, projects, and opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Callegari & Son Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .bg-light {
+            background-color: var(--gray-light);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 25px;
+        }
+        
+        .text-block p {
+            margin-bottom: 20px;
+        }
+        
+        .about-side-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-block {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</body>
+</html>
