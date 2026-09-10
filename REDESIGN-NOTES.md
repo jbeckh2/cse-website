@@ -1,10 +1,12 @@
 # Callegari Solutions website redesign: handover notes
 
-These notes cover the decisions a future editor cannot infer from the markup alone: which
-placeholder is still waiting on a real client asset, how the contact form works today and how
-to move it to a hosted endpoint, where an analytics tag belongs, which image files ship
-unreferenced and why, and the three places where the playbook contradicts itself along with how
-each was resolved.
+These notes cover the decisions a future editor cannot infer from the markup alone: where each
+image came from and what was done to it, how the contact form works today and how to move it to
+a hosted endpoint, where an analytics tag belongs, which image files ship unreferenced and why,
+and the three places where the playbook contradicts itself along with how each was resolved.
+
+No placeholders remain in the markup. One supplied image was rejected as AI generated, see
+section 1d, and the homepage hero is still generic stock worth replacing, see section 1c.
 
 Deployable web root: `public/`. GitLab Pages publishes that directory as the site root, so
 every file inside it is fetchable at `https://callegarisolutions.com/<path>` whether or not a
@@ -12,59 +14,100 @@ page links to it. Anything that should not be public must not live under `public
 
 ## 1. Image status
 
+All filenames follow `<subject-or-use>-<width>.<ext>` so the purpose is readable from the
+filename alone.
+
 ### 1a. Portrait of Dr. Jay Callegari: DONE
 
-The client supplied the portrait during the build. It is live on both pages that call for it,
-and the monogram placeholder has been removed from the markup.
+Live on both pages that call for it. The monogram placeholder is gone from the markup.
 
 | Location | Markup |
 |---|---|
-| `public/index.html` | `<picture>` inside `.portrait-frame`, section 7 credibility block |
-| `public/about.html` | `<picture>` inside `.portrait-frame`, "Why this matters to clients" |
-
-Files in `public/images/`:
+| `public/index.html` | `<picture>` in `.portrait-frame`, section 7 credibility block |
+| `public/about.html` | `<picture>` in `.portrait-frame`, "Why this matters to clients" |
 
 | File | Dimensions | Size |
 |---|---|---|
-| `jay-callegari.webp` | 480x600 | 20.7 KB |
-| `jay-callegari.jpg` | 480x600 | 44.6 KB |
-| `jay-callegari-360.webp` | 360x450 | 10.1 KB |
-| `jay-callegari-360.jpg` | 360x450 | 25.5 KB |
+| `dr-jay-callegari-portrait-820.webp` / `.jpg` | 820x1025 | 61 / 109 KB |
+| `dr-jay-callegari-portrait-480.webp` / `.jpg` | 480x600 | 21 / 39 KB |
+| `dr-jay-callegari-portrait-360.webp` / `.jpg` | 360x450 | 11 / 22 KB |
 
-Served through `<picture>` with a WebP source, a JPEG fallback, and `srcset` at two widths.
-Also referenced as `image` in the `Person` JSON-LD on the About page.
+Served through `<picture>` with a WebP source, JPEG fallback, and `srcset` at three widths.
+The 820 tier covers 2x displays. Also referenced as `image` in the `Person` JSON-LD on About.
 
-**What was done to the photograph, stated plainly.** The source was 600x600. Two changes were
-made, neither of which touches the subject:
+**What was done to the photograph, stated plainly.**
 
-1. The studio backdrop was extended upward by 44 rows, continuing the measured luminance
-   gradient of the existing backdrop and matching its grain. The original framing left only
-   28px of headroom, which reads as cramped in a 4:5 frame.
-2. 44 rows were trimmed from the bottom of the jacket, and the width was cropped to 4:5
-   centred on the head.
+The client supplied a 600x600 original, then an upscaled 1024x1024 version. The 1024 version is
+the source for the shipped assets. Two things are worth recording:
 
-The face, body and clothing are untouched original pixels. Extending a flat seamless backdrop
-is a routine, non-deceptive retouching operation and is not what the brief means when it rules
-out AI generated portraits, which is about synthesising a person's likeness. Recorded here so
-the edit is on the record rather than discovered later.
+1. *The upscale is faithful.* It was checked rather than assumed. Comparing the two at matched
+   resolution, low frequency content, which is where facial geometry lives, differs by a mean of
+   1.7 out of 255, and the difference inside the face is smaller than the difference in the blank
+   backdrop. The added energy sits entirely in the high frequency band. In plain terms: the
+   upscaler added texture, it did not change his face. Framing is byte-identical between the two.
+   The texture it added is nonetheless synthesised rather than photographed.
+2. *The backdrop was extended.* The original framing left only 28px of headroom, which reads as
+   cramped in a 4:5 frame. The flat studio backdrop was continued upward by 75 rows following its
+   measured luminance gradient with matched grain, and the same amount was trimmed from the bottom
+   of the jacket. The face, body and clothing are untouched. Extending a seamless backdrop is
+   routine retouching and is not what the brief means when it rules out AI generated portraits,
+   which is about synthesising a likeness.
 
-**One open item: resolution.** 600px is all the supplied source had, so the largest asset is
-480x600 and renders at roughly 1x in its slot. It is correct but will look slightly soft on a
-high DPI screen. If the photographer's original exists at 1500px or larger, regenerate from it
-with `documentation/` scripts or any image tool, keeping the same 4:5 crop and filenames. No
-markup change is needed.
+A true photographic original at 1500px or larger would still be preferable to an upscale. If one
+turns up, regenerate at the same 4:5 crop and keep the filenames; no markup change is needed.
 
-### 1b. Louisiana project photograph: STILL PENDING
+### 1b. Louisiana project photograph: DONE
 
-Rendered as the editorial panel placeholder: `.figure-wide` wrapping `.figure-placeholder`.
+Live in the 16:9 figure on the expansion page. The placeholder panel is gone.
 
-| Location | Comment |
-|---|---|
-| `public/louisiana-economic-development-consulting.html` | `<!-- SWAP: replace with a real photograph of a Louisiana industrial, infrastructure, manufacturing or development project. See REDESIGN-NOTES.md -->` |
+| File | Dimensions | Size |
+|---|---|---|
+| `louisiana-river-industrial-corridor-1920.webp` / `.jpg` | 1920x1080 | 225 / 341 KB |
+| `louisiana-river-industrial-corridor-1180.webp` / `.jpg` | 1180x664 | 117 / 160 KB |
+| `louisiana-river-industrial-corridor-760.webp` / `.jpg` | 760x428 | 57 / 74 KB |
 
-The replacement must actually be Louisiana. Do not substitute a photograph of somewhere else,
-and do not use a staged meeting or anonymous people at laptops. The frame is 16:9. Same
-`<img>` attribute requirements as the portrait, and delete the `SWAP` comment once done.
+An aerial of a river industrial corridor: petrochemical plant and tank farm alongside a rail
+yard, tankers and towboats at dock, river bridge in the distance. It carries the exact argument
+the page makes, that Louisiana projects sit where industry, transportation, government and the
+workforce meet.
+
+Checked for authenticity before publishing, at high magnification across the tanker
+superstructure, refinery columns, tank farm, rail yard and bridge trusses. Structures are
+physically coherent, perspective is consistent, and repeating elements vary naturally. No
+generation artefacts were found. Note that this establishes the absence of obvious artefacts,
+not provenance: **confirm the licence before launch** if it came from a stock library.
+
+### 1c. Homepage hero: STILL GENERIC, worth replacing
+
+Not a placeholder, so nothing looks broken, but it is the weakest visual on the site and it is
+the first thing every visitor sees.
+
+`home-hero-720.*` and `home-hero-480.*` are a stock photograph of anonymous glass office towers
+inherited from the old site. No people and no identifiable location, so it breaks no rule, but it
+says nothing about Louisiana or about this firm.
+
+Wanted: an authentic Louisiana industrial, infrastructure, development or project-execution
+photograph, 4:5 or wider, at least 1200x1500. Drop it in and the crop, WebP conversion, `srcset`
+and alt text follow the same pattern as the two above.
+
+### 1d. Rejected: swamp pipeline construction image
+
+A vertical image of pipeline construction in a cypress swamp was supplied for the hero slot and
+**was not used.** It is AI generated, not a photograph. The evidence is specific and visible at
+2x magnification:
+
+* The foreground excavator's boom-to-bucket linkage is malformed; the hydraulic components do not
+  connect in any physically possible arrangement.
+* The lattice crane boom has irregular, non-repeating cell geometry. Real lattice booms are
+  perfectly regular. A second boom behind it terminates in nothing.
+* The mid-distance workers have smeared faces, merged hard hats and indistinct hands, and in
+  places two workers' legs fuse together.
+* The laid pipe changes diameter along its run.
+
+Publishing it would violate the brief twice over: section 3 rules out generic AI imagery, and
+section 10 asks for real professional photography. On a professional services site selling
+judgement about real projects, a fabricated photograph of a project is a material
+misrepresentation rather than a style problem. The file is not in the repository.
 
 ## 2. Contact form: how it works and how to switch endpoints
 
@@ -181,22 +224,34 @@ Files actually in use:
   render in, which is why the original `home-hero.jpg` is no longer referenced: it was a 3:2
   image losing 47 percent of its width to `object-fit: cover`. Largest variant is 124 KB
   against the playbook's 250 to 350 KB hero budget.
-* `jay-callegari*`: the portrait, see section 1a.
+* `dr-jay-callegari-portrait-*`: the portrait, see section 1a.
+* `louisiana-river-industrial-corridor-*`: the expansion page figure, see section 1b.
 * `og-cover.png`: the 1200x630 social sharing card, referenced by the Open Graph and Twitter
   card tags on all five pages.
 
-## 6. Portrait provenance
+## 6. Image provenance
 
-Recorded because a build pass correctly refused to publish the portrait without it.
+Recorded because a build pass correctly refused to publish the portrait without it, and because
+one supplied image turned out to be AI generated. Every image on the site should have a
+traceable answer to "where did this come from".
 
-The photograph was supplied by the client directly in the working session on 10 September 2026,
-with the confirmation "That is a portrait of Jay Callegari", and the 4:5 crop was confirmed by
-the client in the same session. It was not downloaded from LinkedIn or any other source. The
-editing performed on it is itemised in section 1a.
+All of these were supplied by the client directly in the working session on 10 September 2026.
+None were downloaded from LinkedIn, a search engine, or any other source by the build.
 
-The one caveat worth carrying forward is resolution, not authenticity: the supplied file was
-600x600, which is smaller than an original studio export would normally be, so a higher
-resolution original is still worth requesting. See section 1a.
+| Image | Supplied as | Verified | Status |
+|---|---|---|---|
+| Portrait of Dr. Callegari | 600x600, then a 1024x1024 upscale, confirmed by the client as "a portrait of Jay Callegari" | Upscale checked against the original: facial geometry unchanged, added detail is texture only | live |
+| Louisiana river industrial corridor | 2000x1116 | Inspected at high magnification, no generation artefacts | live |
+| Swamp pipeline construction | 928x1152 | Inspected at high magnification, multiple generation artefacts | **rejected, see 1d** |
+| `home-hero.jpg`, `about-hero.jpg`, `services-hero.jpg`, `about-collaboration.jpg`, `ai-solutions-bg.png` | inherited from the previous site | not verified | see section 5 |
+
+Two things still worth chasing:
+
+1. **Licensing.** Provenance in this repository means "the client handed it over", not "the
+   client owns it". Before launch, confirm the Louisiana aerial is licensed for commercial use
+   if it came from a stock library.
+2. **A true photographic original of the portrait.** The shipped assets derive from an upscale.
+   It is faithful, but a real 1500px-plus export would be better. See section 1a.
 
 ## 7. Conventions worth preserving
 
