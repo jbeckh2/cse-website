@@ -1,107 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE - Callegari & Son Enterprises | Consulting & Solutions</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Louisiana Economic Development &amp; Business Consulting | Callegari Solutions</title>
+    <meta name="description" content="Callegari Solutions provides Louisiana economic development consulting, business expansion support, incentive strategy, government navigation, project development, and strategic problem-solving services.">
+    <link rel="canonical" href="https://callegarisolutions.com/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#12233B">
+
+    <!-- Sets the html.js flag before first paint so the .reveal starting state
+         applies immediately. script.js sets the same class again, harmlessly.
+         Must stay above the stylesheet links: a classic inline script placed
+         after them waits for those stylesheets to load before it runs. -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Callegari Solutions">
+    <meta property="og:title" content="Louisiana Economic Development &amp; Business Consulting | Callegari Solutions">
+    <meta property="og:description" content="Callegari Solutions provides Louisiana economic development consulting, business expansion support, incentive strategy, government navigation, project development, and strategic problem-solving services.">
+    <meta property="og:url" content="https://callegarisolutions.com/">
+    <meta property="og:image" content="https://callegarisolutions.com/images/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Callegari Solutions, Louisiana based strategic consulting">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Louisiana Economic Development &amp; Business Consulting | Callegari Solutions">
+    <meta name="twitter:description" content="Callegari Solutions provides Louisiana economic development consulting, business expansion support, incentive strategy, government navigation, project development, and strategic problem-solving services.">
+    <meta name="twitter:image" content="https://callegarisolutions.com/images/og-cover.png">
+    <meta name="twitter:image:alt" content="Callegari Solutions, Louisiana based strategic consulting">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://callegarisolutions.com/#organization",
+        "name": "Callegari Solutions",
+        "legalName": "Callegari & Son Enterprises, LLC",
+        "description": "Callegari Solutions is a Louisiana based strategic consulting firm. The firm helps businesses, public entities and organizations with economic development and business expansion, incentive and funding strategy, government navigation, project development and coordination, research and analysis, government contracting support, and practical technology implementation.",
+        "url": "https://callegarisolutions.com/",
+        "image": "https://callegarisolutions.com/images/og-cover.png",
+        "logo": "https://callegarisolutions.com/images/og-cover.png",
+        "email": "jay@callegarisolutions.com",
+        "telephone": "+1-318-481-6505",
+        "foundingDate": "2009",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "208 N. Washington St.",
+            "addressLocality": "Marksville",
+            "addressRegion": "LA",
+            "postalCode": "71351",
+            "addressCountry": "US"
+        },
+        "areaServed": "Louisiana",
+        "sameAs": [
+            "https://www.linkedin.com/in/jay-callegari-phd-a9a5ba18b"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Callegari Solutions",
+        "url": "https://callegarisolutions.com/",
+        "inLanguage": "en-US",
+        "publisher": {
+            "@id": "https://callegarisolutions.com/#organization"
+        }
+    }
+    </script>
+
+    <!-- ANALYTICS PLACEHOLDER
+         No analytics tag ships with this site because no measurement account
+         exists yet. When a Google Analytics 4 property is created, paste the
+         two GA4 tag lines here, on every page, and nowhere else.
+         See REDESIGN-NOTES.md. Do not paste an unconfigured tracker. -->
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/CSE-logo.png" alt="CSE - Callegari & Son Enterprises Logo" class="logo-img">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header site-header--overlay">
+        <div class="container header-inner">
+            <a class="wordmark" href="index.html">
+                <span class="wordmark__name">CALLEGARI</span>
+                <span class="wordmark__sub">SOLUTIONS</span>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+
+            <nav class="nav" id="site-nav" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="index.html" aria-current="page">HOME</a></li>
+                    <li><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li><a class="nav-link" href="services.html">SERVICES</a></li>
+                    <li><a class="nav-link" href="louisiana-economic-development-consulting.html">LOUISIANA EXPANSION</a></li>
+                    <li><a class="nav-link" href="contact.html">CONTACT</a></li>
                 </ul>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <a class="btn btn--primary btn--compact nav-cta" href="contact.html">DISCUSS A PROJECT</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
+    <main id="main" tabindex="-1">
+
+        <!-- 1. Hero -->
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
-                <div class="hero-content">
-                    <h1>SOLVING PROBLEMS.<br>MOVING PROJECTS FORWARD.<br>CREATING OPPORTUNITY.</h1>
-                    <p>CSE is a consulting firm that helps businesses and public entities navigate complexity, improve operations, and bring projects to life.</p>
-                    <a href="contact.html" class="btn btn-primary">GET SOLUTIONS</a>
+                <div class="hero__grid split split--5842">
+
+                    <div>
+                        <span class="eyebrow">LOUISIANA-BASED STRATEGIC CONSULTING</span>
+                        <h1 id="hero-heading">SOLVING PROBLEMS.<br>MOVING PROJECTS FORWARD.<br>CREATING OPPORTUNITY.</h1>
+                        <p class="lede">Callegari Solutions helps businesses, public entities, and organizations navigate complexity, solve difficult problems, and turn opportunities into executable projects.</p>
+                        <p>Led by Dr. Jay Callegari, the firm combines PhD-level research and analysis with real-world experience across business, government, economic development, public administration, project development, contracting, and technology.</p>
+                        <div class="btn-row">
+                            <a class="btn btn--brass" href="contact.html">DISCUSS YOUR PROJECT</a>
+                            <a class="btn btn--on-dark" href="louisiana-economic-development-consulting.html">EXPANDING IN LOUISIANA?</a>
+                        </div>
+                    </div>
+
+                    <div class="hero__media">
+                        <div class="hero__figure">
+                            <picture>
+                                <source type="image/webp" srcset="images/home-hero-480.webp 480w, images/home-hero-720.webp 720w" sizes="(max-width: 900px) 92vw, 480px">
+                                <img src="images/home-hero-720.jpg" srcset="images/home-hero-480.jpg 480w, images/home-hero-720.jpg 720w" sizes="(max-width: 900px) 92vw, 480px" alt="" width="720" height="900" decoding="async" fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="proof-card">
+                            <span class="eyebrow">AT A GLANCE</span>
+                            <ul>
+                                <li>PhD-led</li>
+                                <li>Founded 2009</li>
+                                <li>Louisiana-based</li>
+                                <li>Government + business experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="services-overview">
+        <!-- 2. Credibility strip -->
+        <section aria-label="Firm credentials">
+            <div class="proof-strip proof-strip--dark">
+                <span>Founded 2009</span>
+                <span>PhD-led strategy</span>
+                <span>Government + business experience</span>
+                <span>Projects from concept to execution</span>
+            </div>
+        </section>
+
+        <!-- 3. What we do -->
+        <section class="section" aria-labelledby="what-we-do">
             <div class="container">
-                <h2 class="section-title">Services Overview</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+
+                <div class="section-head reveal">
+                    <span class="eyebrow">WHAT WE DO</span>
+                    <h2 id="what-we-do">Three areas of work, one practical approach</h2>
+                    <p class="lede">Most engagements begin with a problem, an opportunity, or a project that has stalled. These are the areas where Callegari Solutions is asked to help most often.</p>
+                </div>
+
+                <div class="svc-blocks">
+
+                    <article class="svc-block reveal">
+                        <div>
+                            <span class="rule-brass" aria-hidden="true"></span>
+                            <span class="svc-block__marker" aria-hidden="true">01</span>
+                            <h3 class="svc-block__title">Economic Development &amp; Business Expansion</h3>
                         </div>
-                        <h3>STRATEGIC CONSULTING</h3>
-                        <p>Providing practical guidance to help organizations solve problems, improve operations, and move projects forward.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3"></path><path d="M5 21V10.85"></path><path d="M9 21V10.85"></path><path d="M15 21V10.85"></path><path d="M19 21V10.85"></path><path d="M2 7l10-5 10 5"></path></svg>
+                        <div class="svc-block__body">
+                            <p>Incentives, workforce resources, project strategy, investment support, site considerations, and Louisiana program navigation.</p>
+                            <a class="link-arrow" href="services.html#expansion">Learn More<span class="visually-hidden"> about economic development and business expansion</span></a>
                         </div>
-                        <h3>GOVERNMENT NAVIGATION</h3>
-                        <p>Helping clients understand and work effectively within government systems, funding structures, and decision-making processes.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </article>
+
+                    <article class="svc-block reveal">
+                        <div>
+                            <span class="rule-brass" aria-hidden="true"></span>
+                            <span class="svc-block__marker" aria-hidden="true">02</span>
+                            <h3 class="svc-block__title">Government Navigation &amp; Project Development</h3>
                         </div>
-                        <h3>GRANTS, TAX INCENTIVES &amp; ECONOMIC DEVELOPMENT</h3>
-                        <p>CSE helps businesses and organizations identify and pursue grants, tax incentives, and economic development opportunities that support growth and strengthen projects.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                        <div class="svc-block__body">
+                            <p>Agencies, stakeholders, public processes, project coordination, regulatory pathways, and execution support.</p>
+                            <a class="link-arrow" href="services.html#government">Learn More<span class="visually-hidden"> about government navigation and project development</span></a>
                         </div>
-                        <h3>PROJECT COORDINATION</h3>
-                        <p>Supporting the development of projects by connecting the right people, aligning priorities, and creating a path to execution.</p>
-                    </div>
-                    <div class="service-card ai-card" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/ai-solutions-bg.png'); background-size: cover; background-position: center;">
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+                    </article>
+
+                    <article class="svc-block reveal">
+                        <div>
+                            <span class="rule-brass" aria-hidden="true"></span>
+                            <span class="svc-block__marker" aria-hidden="true">03</span>
+                            <h3 class="svc-block__title">Strategic Problem Solving</h3>
                         </div>
-                        <h3 style="color: white;">AI SOLUTIONS</h3>
-                        <p style="color: rgba(255, 255, 255, 0.9);">CSE identifies where AI can make an immediate difference in your operations and puts the right tools in place to make it happen. From automating repetitive tasks to improving how decisions get made, we focus on practical implementation, not theory.</p>
-                    </div>
+                        <div class="svc-block__body">
+                            <p>Research, analysis, operational challenges, complex cross-sector projects, government contracting support, and practical AI/automation.</p>
+                            <a class="link-arrow" href="services.html#strategy">Learn More<span class="visually-hidden"> about strategic problem solving</span></a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="cta-bottom">
+        <!-- 4. Louisiana expansion feature -->
+        <section class="section section--paper" aria-labelledby="louisiana-feature">
             <div class="container">
-                <div class="cta-content">
-                    <h2>Let's Talk</h2>
-                    <p>If you have a project, operational challenge, or opportunity that needs a clear path forward, CSE can help.</p>
-                    <a href="contact.html" class="btn btn-secondary">CONTACT US</a>
+                <div class="split split--4060">
+
+                    <div class="reveal">
+                        <span class="eyebrow">LOUISIANA EXPANSION</span>
+                        <h2 id="louisiana-feature">Expanding or investing in Louisiana?</h2>
+                        <p>Louisiana offers significant opportunities for companies creating jobs, making capital investments, developing facilities, and expanding operations. The challenge is understanding which programs, organizations, incentives, workforce resources, sites, and government processes apply to a specific project.</p>
+                        <p>Callegari Solutions helps companies identify those opportunities, organize the path forward, and coordinate the public and private resources surrounding the project.</p>
+                        <div class="btn-row">
+                            <a class="btn btn--primary" href="louisiana-economic-development-consulting.html">EXPLORE LOUISIANA EXPANSION SERVICES</a>
+                        </div>
+                    </div>
+
+                    <div class="card reveal" style="--i:1">
+                        <span class="eyebrow">WHERE WE HELP</span>
+                        <ul class="list-plain">
+                            <li><strong>Incentives.</strong> Identify state and local programs that may apply, and understand requirements and timing.</li>
+                            <li><strong>Workforce.</strong> Review training programs, hiring resources, and the organizations behind them.</li>
+                            <li><strong>Site Strategy.</strong> Evaluate location considerations, utilities, transportation, and jurisdictional questions.</li>
+                            <li><strong>Government Navigation.</strong> Determine which agencies, offices, and public processes affect the project.</li>
+                            <li><strong>Project Coordination.</strong> Organize stakeholders, sequence the work, and keep the project moving.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- 5. How Callegari Solutions works -->
+        <section class="section" aria-labelledby="how-we-work">
+            <div class="container">
+
+                <div class="section-head reveal">
+                    <span class="eyebrow">HOW WE WORK</span>
+                    <h2 id="how-we-work">How Callegari Solutions works</h2>
+                    <p class="lede">The sequence stays the same whether the work is a Louisiana expansion, a government process, or a project that needs to move again.</p>
+                </div>
+
+                <ol class="steps">
+                    <li class="step reveal" style="--i:1">
+                        <span class="step__num" aria-hidden="true">01</span>
+                        <h3 class="step__title">Define the objective</h3>
+                        <p>Understand what the client is actually trying to accomplish.</p>
+                    </li>
+                    <li class="step reveal" style="--i:2">
+                        <span class="step__num" aria-hidden="true">02</span>
+                        <h3 class="step__title">Identify the opportunities and obstacles</h3>
+                        <p>Examine programs, stakeholders, processes, resources, incentives, and constraints.</p>
+                    </li>
+                    <li class="step reveal" style="--i:3">
+                        <span class="step__num" aria-hidden="true">03</span>
+                        <h3 class="step__title">Build the path</h3>
+                        <p>Determine the people, agencies, tools, resources, and sequence needed to move forward.</p>
+                    </li>
+                    <li class="step reveal" style="--i:4">
+                        <span class="step__num" aria-hidden="true">04</span>
+                        <h3 class="step__title">Help execute</h3>
+                        <p>Stay involved where needed to coordinate, solve problems, and maintain momentum.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </section>
+
+        <!-- 6. Industries and sectors -->
+        <section class="section section--cool" aria-labelledby="industries">
+            <div class="container">
+
+                <div class="section-head reveal">
+                    <span class="eyebrow">WHO WE WORK WITH</span>
+                    <h2 id="industries">Industries and sectors</h2>
+                    <p class="lede">Callegari Solutions works with private companies, public entities, and organizations whose projects involve investment, infrastructure, government, and coordination across sectors.</p>
+                </div>
+
+                <ul class="chips reveal">
+                    <li class="chip">Aerospace &amp; Defense</li>
+                    <li class="chip">Advanced Manufacturing</li>
+                    <li class="chip">Industrial Development</li>
+                    <li class="chip">Energy &amp; Utilities</li>
+                    <li class="chip">Engineering &amp; Construction</li>
+                    <li class="chip">Infrastructure</li>
+                    <li class="chip">Technology &amp; AI</li>
+                    <li class="chip">Professional Services</li>
+                    <li class="chip">Government Contractors</li>
+                    <li class="chip">Public Sector</li>
+                    <li class="chip">Economic Development Organizations</li>
+                    <li class="chip">Education &amp; Workforce</li>
+                    <li class="chip">Logistics &amp; Distribution</li>
+                    <li class="chip">Real Estate &amp; Site Development</li>
+                    <li class="chip">Companies Entering or Expanding in Louisiana</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- 7. Meet Dr. Jay Callegari -->
+        <section class="section" aria-labelledby="meet-dr-callegari">
+            <div class="container">
+                <!-- Copy leads in the DOM so the heading, not a tall portrait frame,
+                     is the first thing on a phone. split--reverse restores the
+                     portrait to the left column at 900px and above. -->
+                <div class="bio split--reverse">
+
+                    <div class="reveal">
+                        <span class="eyebrow">MEET DR. JAY CALLEGARI</span>
+                        <h2 id="meet-dr-callegari">Cross-sector experience. Practical perspective.</h2>
+                        <p>Dr. Jay Callegari brings a professional background spanning business ownership, government, public administration, higher education, law enforcement leadership, public service, project development, research, contracting, and technology. That range allows Callegari Solutions to understand both how organizations operate and how complex public and institutional systems affect a project.</p>
+                        <p>His experience includes PhD-level academic training, university leadership, state and local public-service roles, law-enforcement leadership, private business ownership, specialized construction, and Department of Defense contracting.</p>
+                        <div class="btn-row">
+                            <a class="btn btn--primary" href="about.html">MEET DR. CALLEGARI</a>
+                            <a class="btn btn--secondary" href="https://www.linkedin.com/in/jay-callegari-phd-a9a5ba18b" target="_blank" rel="noopener noreferrer">CONNECT ON LINKEDIN<span class="visually-hidden">, opens in a new tab</span></a>
+                        </div>
+                    </div>
+
+                    <div class="portrait-frame reveal" style="--i:1">
+                        <picture>
+                            <source type="image/webp" srcset="images/jay-callegari-360.webp 360w, images/jay-callegari.webp 480w" sizes="(max-width: 760px) 88vw, 440px">
+                            <img src="images/jay-callegari.jpg" srcset="images/jay-callegari-360.jpg 360w, images/jay-callegari.jpg 480w" sizes="(max-width: 760px) 88vw, 440px" width="480" height="600" loading="lazy" decoding="async" alt="Dr. Jay Callegari, founder and principal consultant of Callegari Solutions">
+                        </picture>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Final call to action -->
+        <section class="cta-band cta-band--brass-rule" aria-labelledby="final-cta">
+            <div class="container container--narrow">
+                <h2 id="final-cta">Have a project, expansion, or problem to solve?</h2>
+                <p>You do not need to know what consulting service you need. Tell us what you are trying to accomplish, where the project is stuck, or what opportunity you are evaluating. Callegari Solutions will help determine the path forward.</p>
+                <div class="btn-row">
+                    <a class="btn btn--brass" href="contact.html">DISCUSS YOUR PROJECT</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Callegari & Son Enterprises. All rights reserved.</p>
+            <div class="footer-grid">
+
+                <div class="footer-col footer-brand">
+                    <h2 class="visually-hidden">Callegari Solutions</h2>
+                    <a class="wordmark" href="index.html">
+                        <span class="wordmark__name">CALLEGARI</span>
+                        <span class="wordmark__sub">SOLUTIONS</span>
+                    </a>
+                    <p>Louisiana based strategic consulting for economic development, business expansion, government navigation, project development, and complex problem solving.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Services</h2>
+                    <ul class="footer-links">
+                        <li><a href="services.html#expansion">Economic Development &amp; Business Expansion</a></li>
+                        <li><a href="services.html#government">Government &amp; Public Sector Navigation</a></li>
+                        <li><a href="services.html#projects">Project Development &amp; Coordination</a></li>
+                        <li><a href="services.html#funding">Grants, Incentives &amp; Funding</a></li>
+                        <li><a href="services.html#research">Research, Policy &amp; Analysis</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Company</h2>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Callegari Solutions</a></li>
+                        <li><a href="louisiana-economic-development-consulting.html">Louisiana Expansion</a></li>
+                        <li><a href="services.html">Consulting Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://www.linkedin.com/in/jay-callegari-phd-a9a5ba18b" target="_blank" rel="noopener noreferrer">Dr. Jay Callegari on LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Contact</h2>
+                    <ul class="footer-contact">
+                        <li><a href="mailto:jay@callegarisolutions.com">jay@callegarisolutions.com</a></li>
+                        <li><a href="tel:+13184816505">(318) 481-6505</a></li>
+                        <li>
+                            <address>
+                                208 N. Washington St.<br>
+                                Marksville, LA 71351
+                            </address>
+                        </li>
+                        <li><a href="contact.html">Discuss a Project</a></li>
+                    </ul>
+                    <a class="social-link" href="https://www.linkedin.com/in/jay-callegari-phd-a9a5ba18b" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
+                        <span class="visually-hidden">Dr. Jay Callegari on LinkedIn, opens in a new tab</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>Callegari Solutions | Callegari &amp; Son Enterprises, LLC. &copy; 2026. All rights reserved.</p>
+                <p>Strategy | Economic Development | Problem Solving</p>
+            </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
