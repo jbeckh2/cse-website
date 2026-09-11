@@ -99,6 +99,12 @@ consistent shadows, coherent lock gates and pipe yard, film grain from a scanned
 photograph. EXIF shows Photoshop processing in April 2017 at UTC-5, consistent with a Louisiana
 archive. No caption or credit fields survived in the metadata.
 
+**Licence: public domain.** The client confirmed on 11 September 2026 that this image, together
+with the three in 1d, is a US government work from a federal source. US government works are not
+subject to copyright, so no licence, fee or attribution is required for commercial use. A photo
+credit is still good practice if a natural place for one appears; none is shown today because a
+credit line on the hero would work against the design.
+
 **Likely identification, unconfirmed:** the configuration matches the Port Allen Lock, where the
 Gulf Intracoastal Waterway meets the Mississippi River opposite Baton Rouge. The filename and
 alt text deliberately do not assert that. If the client confirms it, both can be made specific,
@@ -118,7 +124,10 @@ other three are real photographs and are recorded here so the reasoning is not l
 | Tugboats and a crane barge at dusk | 1024x684 | Real and atmospheric, but dark and indirect as a message, and 1024px is under 1x for the only 16:9 slot. |
 | River grain or bulk terminal panorama with two workers | 1024x441 | The best fallback among the three if the 16:9 slot ever needs re-filling. It would need cropping to 16:9 (about 784x441) and a roughly 2x upscale, which the client has permitted. Not used now because the refinery aerial in 1b is native 2000px and a stronger fit. |
 
-None of the three are in the repository.
+None of the three are in the repository. All three are US government public domain works,
+confirmed by the client on 11 September 2026, so the only reasons they are not used are the
+ones in the table: agency branding and consent for the first, resolution and fit for the other
+two. Public domain status does not change the affiliation problem with the spillway crew image.
 
 **Rejected earlier: swamp pipeline construction image.** Supplied for the hero slot and not
 used because it is AI generated, not a photograph. The evidence is specific and visible at 2x
@@ -266,17 +275,21 @@ None were downloaded from LinkedIn, a search engine, or any other source by the 
 | Image | Supplied as | Verified | Status |
 |---|---|---|---|
 | Portrait of Dr. Callegari | 600x600, then a 1024x1024 upscale, confirmed by the client as "a portrait of Jay Callegari" | Upscale checked against the original: facial geometry unchanged, added detail is texture only | live |
-| Louisiana river industrial corridor | 2000x1116 | Inspected at high magnification, no generation artefacts | live |
+| Louisiana river industrial corridor | 2000x1116 | Inspected at high magnification, no generation artefacts | live, **licence unconfirmed** |
 | Swamp pipeline construction | 928x1152 | Inspected at high magnification, multiple generation artefacts | **rejected, see 1d** |
-| Louisiana waterway lock aerial | 1201x1500, EXIF intact | Inspected at high magnification, real scanned-slide photograph | live, homepage hero |
-| Spillway crew, tugboats at dusk, grain terminal panorama | 1024px each | Real photographs | not used, see 1d |
+| Louisiana waterway lock aerial | 1201x1500, EXIF intact | Inspected at high magnification, real scanned-slide photograph | live, homepage hero, **US government public domain** |
+| Spillway crew, tugboats at dusk, grain terminal panorama | 1024px each | Real photographs | not used, see 1d, **US government public domain** |
 | `home-hero.jpg`, `about-hero.jpg`, `services-hero.jpg`, `about-collaboration.jpg`, `ai-solutions-bg.png` | inherited from the previous site | not verified | see section 5 |
 
 Two things still worth chasing:
 
-1. **Licensing.** Provenance in this repository means "the client handed it over", not "the
-   client owns it". Before launch, confirm the Louisiana aerial is licensed for commercial use
-   if it came from a stock library.
+1. **Licensing of the river industrial corridor aerial (1b).** The four images supplied on
+   11 September are confirmed US government public domain. The refinery aerial on the expansion
+   page was supplied separately, in the same batch as the rejected AI image, and its origin has
+   not been stated. Before launch, confirm where it came from. If it is also a government work,
+   record that here and the site carries zero licence exposure. If it is stock, confirm the
+   licence covers commercial use. If neither can be established, the grain terminal panorama in
+   1d is the public domain fallback for that slot.
 2. **A true photographic original of the portrait.** The shipped assets derive from an upscale.
    It is faithful, but a real 1500px-plus export would be better. See section 1a.
 
