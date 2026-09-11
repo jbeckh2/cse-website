@@ -1,0 +1,3 @@
+# Built review copies from tools/build-preview.mjs. The published site is
+# public/, which is committed; nothing here is ever deployed.
+dist/
