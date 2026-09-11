@@ -5,8 +5,9 @@ image came from and what was done to it, how the contact form works today and ho
 a hosted endpoint, where an analytics tag belongs, which image files ship unreferenced and why,
 and the three places where the playbook contradicts itself along with how each was resolved.
 
-No placeholders remain in the markup. One supplied image was rejected as AI generated, see
-section 1d, and the homepage hero is still generic stock worth replacing, see section 1c.
+No placeholders remain in the markup and every photograph on the site is now an authentic
+Louisiana image. One supplied image was rejected as AI generated and three others were not
+needed, see section 1d.
 
 Deployable web root: `public/`. GitLab Pages publishes that directory as the site root, so
 every file inside it is fetchable at `https://callegarisolutions.com/<path>` whether or not a
@@ -77,24 +78,51 @@ physically coherent, perspective is consistent, and repeating elements vary natu
 generation artefacts were found. Note that this establishes the absence of obvious artefacts,
 not provenance: **confirm the licence before launch** if it came from a stock library.
 
-### 1c. Homepage hero: STILL GENERIC, worth replacing
+### 1c. Homepage hero: DONE
 
-Not a placeholder, so nothing looks broken, but it is the weakest visual on the site and it is
-the first thing every visitor sees.
+The inherited stock photograph of glass office towers is replaced with a supplied aerial of a
+Louisiana navigation lock: an industrial canal meeting a wide river, crossed by a highway
+bridge and a railroad vertical-lift bridge, with a pipe yard in the foreground. Waterway,
+highway, rail and industry in one frame, which is the homepage's argument in a picture.
 
-`home-hero-720.*` and `home-hero-480.*` are a stock photograph of anonymous glass office towers
-inherited from the old site. No people and no identifiable location, so it breaks no rule, but it
-says nothing about Louisiana or about this firm.
+| File | Dimensions | Size |
+|---|---|---|
+| `louisiana-waterway-lock-aerial-960.webp` / `.jpg` | 960x1200 | 156 / 223 KB |
+| `louisiana-waterway-lock-aerial-720.webp` / `.jpg` | 720x900 | 99 / 136 KB |
+| `louisiana-waterway-lock-aerial-480.webp` / `.jpg` | 480x600 | 49 / 64 KB |
 
-Wanted: an authentic Louisiana industrial, infrastructure, development or project-execution
-photograph, 4:5 or wider, at least 1200x1500. Drop it in and the crop, WebP conversion, `srcset`
-and alt text follow the same pattern as the two above.
+The source was 1201x1500, natively 4:5, so this is a 1px trim and downscale with no upscaling.
+The navy grade is applied in CSS (`.hero__figure::after`), not baked into the file.
 
-### 1d. Rejected: swamp pipeline construction image
+Verified at 2x magnification before use: regular lift-bridge truss geometry, traffic casting
+consistent shadows, coherent lock gates and pipe yard, film grain from a scanned slide. Real
+photograph. EXIF shows Photoshop processing in April 2017 at UTC-5, consistent with a Louisiana
+archive. No caption or credit fields survived in the metadata.
 
-A vertical image of pipeline construction in a cypress swamp was supplied for the hero slot and
-**was not used.** It is AI generated, not a photograph. The evidence is specific and visible at
-2x magnification:
+**Likely identification, unconfirmed:** the configuration matches the Port Allen Lock, where the
+Gulf Intracoastal Waterway meets the Mississippi River opposite Baton Rouge. The filename and
+alt text deliberately do not assert that. If the client confirms it, both can be made specific,
+which would also help the Louisiana search phrases.
+
+The derived `home-hero-480.*` and `home-hero-720.*` tiers this replaces were deleted. The
+original `home-hero.jpg` stays as an unreferenced legacy file, see section 5.
+
+### 1d. Supplied but not used
+
+Four further images were supplied together in the working session. One was used (1c). The
+other three are real photographs and are recorded here so the reasoning is not lost.
+
+| Image | Size | Why not used |
+|---|---|---|
+| Crew on a spillway or floodgate structure, power plant behind | 1024x681 | The hard hats carry the US Army Corps of Engineers castle emblem and several faces are clearly identifiable. Playbook section 15 rules out implying affiliation with any agency, and putting identifiable agency personnel on a commercial site without their consent is a separate problem. Not usable in any prominent slot. |
+| Tugboats and a crane barge at dusk | 1024x684 | Real and atmospheric, but dark and indirect as a message, and 1024px is under 1x for the only 16:9 slot. |
+| River grain or bulk terminal panorama with two workers | 1024x441 | The best fallback among the three if the 16:9 slot ever needs re-filling. It would need cropping to 16:9 (about 784x441) and a roughly 2x upscale, which the client has permitted. Not used now because the refinery aerial in 1b is native 2000px and a stronger fit. |
+
+None of the three are in the repository.
+
+**Rejected earlier: swamp pipeline construction image.** Supplied for the hero slot and not
+used because it is AI generated, not a photograph. The evidence is specific and visible at 2x
+magnification:
 
 * The foreground excavator's boom-to-bucket linkage is malformed; the hydraulic components do not
   connect in any physically possible arrangement.
@@ -212,18 +240,15 @@ makes the branding decisions cheap to reverse.
 | `about-collaboration.jpg` | unreferenced, kept | Anonymous people at laptops, ruled out by the same guardrails. |
 | `services-hero.jpg` | unreferenced, kept | An identifiable New York City street. Wrong region for a Louisiana firm. |
 | `about-hero.jpg` | unreferenced, kept | Empty office corridor, no people. Discouraged rather than prohibited. |
-| `home-hero.jpg` | unreferenced, kept | Superseded by the pre-cropped variants below. |
+| `home-hero.jpg` | unreferenced, kept | The generic glass-towers stock photo the old site used. Superseded by the lock aerial, see 1c. |
 
 Deleting the six of them would save roughly 2 MB per deploy. That is a decision for the client,
 not the build, so nothing was removed.
 
 Files actually in use:
 
-* `home-hero-720.webp` / `.jpg` and `home-hero-480.webp` / `.jpg`: the homepage hero, navy
-  graded in CSS, served through `<picture>` with `srcset`. Pre-cropped to the 4:5 frame they
-  render in, which is why the original `home-hero.jpg` is no longer referenced: it was a 3:2
-  image losing 47 percent of its width to `object-fit: cover`. Largest variant is 124 KB
-  against the playbook's 250 to 350 KB hero budget.
+* `louisiana-waterway-lock-aerial-*`: the homepage hero, see section 1c. Navy graded in CSS,
+  served through `<picture>` with `srcset` at three widths.
 * `dr-jay-callegari-portrait-*`: the portrait, see section 1a.
 * `louisiana-river-industrial-corridor-*`: the expansion page figure, see section 1b.
 * `og-cover.png`: the 1200x630 social sharing card, referenced by the Open Graph and Twitter
@@ -243,6 +268,8 @@ None were downloaded from LinkedIn, a search engine, or any other source by the 
 | Portrait of Dr. Callegari | 600x600, then a 1024x1024 upscale, confirmed by the client as "a portrait of Jay Callegari" | Upscale checked against the original: facial geometry unchanged, added detail is texture only | live |
 | Louisiana river industrial corridor | 2000x1116 | Inspected at high magnification, no generation artefacts | live |
 | Swamp pipeline construction | 928x1152 | Inspected at high magnification, multiple generation artefacts | **rejected, see 1d** |
+| Louisiana waterway lock aerial | 1201x1500, EXIF intact | Inspected at high magnification, real scanned-slide photograph | live, homepage hero |
+| Spillway crew, tugboats at dusk, grain terminal panorama | 1024px each | Real photographs | not used, see 1d |
 | `home-hero.jpg`, `about-hero.jpg`, `services-hero.jpg`, `about-collaboration.jpg`, `ai-solutions-bg.png` | inherited from the previous site | not verified | see section 5 |
 
 Two things still worth chasing:
