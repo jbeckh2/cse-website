@@ -1,0 +1,7 @@
+# robots.txt for callegarisolutions.com
+# Callegari Solutions. All pages are open to crawlers.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://callegarisolutions.com/sitemap.xml
